@@ -11,4 +11,5 @@ jMCM = "1093c137-b6a1-4724-88ca-aaf1fbfbca0a"
 [compat]
 AdderGraphs = "~0.2"
 jIIR2AG = "~0.1"
-jMCM = "~0.1"
+# jMCM = "~0.1"
+jMCM = "0.1.x"
