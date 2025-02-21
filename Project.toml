@@ -9,7 +9,7 @@ jIIR2AG = "6c47329b-b4fa-45de-8436-c3dbac5ca469"
 jMCM = "1093c137-b6a1-4724-88ca-aaf1fbfbca0a"
 
 [compat]
-AdderGraphs = "~0.2"
-jIIR2AG = "~0.1"
+AdderGraphs = "0.1"
+jIIR2AG = "0.1"
 # jMCM = "~0.1"
-jMCM = "0.1.x"
+jMCM = "0.1"
