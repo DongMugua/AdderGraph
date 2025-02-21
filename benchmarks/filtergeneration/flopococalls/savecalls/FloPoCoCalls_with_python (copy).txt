@@ -1,0 +1,140 @@
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fedf6f34360bf43:0xbffdf6f34360bf43:0x3fedf6f34360bf43" coeffa="0xbffe68209a777626:0x3fecfe7849300552" outputFile=hp0_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl hp0_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-31:0" coeffb="16:-16:0" shifta=5 shiftb=4 graphb="{{'O',[16],1,[1],0,4}}" grapha="{{'O',[31],2,[31],1,0},{'A',[31],1,[1],0,5,[-1],0,0}}" method="multiplierless" outputFile=hp0_dw16_cw06_shiftandadd.vhd H=1.9999999999999847 Heps=31.999999999999527
+python ../tools/vivado-runsyn.py --implement --vhdl hp0_dw16_cw06_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-1946:928" coeffb="959:-1918:959" shifta=10 shiftb=10 method="plain" outputFile=hp0_dw16_cw11_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl hp0_dw16_cw11_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-1946:928" coeffb="959:-1918:959" shifta=10 shiftb=10 method="plain" outputFile=hp0_dw16_cw11_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl hp0_dw16_cw11_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-1946:928" coeffb="959:-1918:959" shifta=10 shiftb=10 graphb="{{'O',[1918],3,[959],2,1},{'O',[959],3,[959],2,0},{'A',[15],1,[1],0,4,[-1],0,0},{'A',[959],2,[15],1,6,[-1],0,0}}" grapha="{{'O',[1946],4,[973],3,1},{'O',[928],4,[29],2,5},{'A',[3],1,[1],0,0,[1],0,1},{'A',[29],2,[1],0,5,[-3],1,0},{'A',[45],2,[3],1,4,[-3],1,0},{'A',[973],3,[29],2,5,[45],2,0}}" method="multiplierless" outputFile=hp0_dw16_cw11_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl hp0_dw16_cw11_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fd713df11810bb7:0x3fe32826f05611ca:0x3fd713df11810bb7" coeffa="0x3fbee0aad976cc5d:0x3fd6228d4db93927" outputFile=lp4_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="2:6" coeffb="3:5:3" shifta=4 shiftb=3 method="plain" outputFile=lp4_dw16_cw04_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw04_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="2:6" coeffb="3:5:3" shifta=4 shiftb=3 method="plain" outputFile=lp4_dw16_cw04_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw04_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="2:6" coeffb="3:5:3" shifta=4 shiftb=3 graphb="{{'O',[3],3,[3],1,0},{'O',[5],3,[5],2,0},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[5],2,[1],0,1,[3],1,0}}" grapha="{{'O',[2],2,[1],0,1},{'O',[6],2,[3],1,1},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp4_dw16_cw04_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw04_truncatedshiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="3:1" coeffb="1:2:1" shifta=2 shiftb=1 graphb="{{'O',[1],1,[1],0,0},{'O',[2],1,[1],0,1}}" grapha="{{'O',[3],2,[3],1,0},{'O',[1],2,[1],0,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp4_dw16_cw04_shiftandadd.vhd H=1.4602488433578436 Heps=2.2301244216789216
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca334c2df947b5:0x3fc8cbe9ab6479e7:0x3fca334c2df947b5" coeffa="0xbfe7c88f69e58411:0x3fda744a9efb62a7" outputFile=lp1x0_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x0_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:3" coeffb="2:2:1" shifta=3 shiftb=3 graphb="{{'O',[2],1,[1],0,1},{'O',[1],1,[1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp1x0_dw16_cw04_shiftandadd.vhd H=1.3666479178186464 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x0_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp1x0_dw16_cw10_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x0_dw16_cw10_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp1x0_dw16_cw10_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x0_dw16_cw10_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 graphb="{{'O',[419],4,[419],3,0},{'O',[397],4,[397],3,0},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[397],3,[3],1,7,[13],2,0},{'A',[419],3,[13],2,5,[3],1,0}}" grapha="{{'O',[381],4,[381],2,0},{'O',[212],4,[53],3,2},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[381],2,[3],1,7,[-3],1,0},{'A',[53],3,[13],2,2,[1],0,0}}" method="multiplierless" outputFile=lp1x0_dw16_cw10_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x0_dw16_cw10_truncatedshiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-192:96" coeffb="64:64:32" shifta=8 shiftb=8 graphb="{{'O',[64],1,[1],0,6},{'O',[32],1,[1],0,5}}" grapha="{{'O',[192],2,[3],1,6},{'O',[96],2,[3],1,5},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp1x0_dw16_cw10_shiftandadd.vhd H=1.3666479178186464 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x0_dw16_cw10_shiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca008441ca9136:0x3fcbb7c7de30f49f:0x3fca008441ca9136" coeffa="0xbfe6c7aa185b9b8a:0x3fd95cf68291c524" outputFile=lp1x1_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x1_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x1_dw16_cw04_truncatedshiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:3" coeffb="2:2:1" shifta=3 shiftb=3 graphb="{{'O',[2],1,[1],0,1},{'O',[1],1,[1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp1x1_dw16_cw04_shiftandadd.vhd H=1.3666479178186464 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x1_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-23327:12986" coeffb="26626:28383:26626" shifta=15 shiftb=17 method="plain" outputFile=lp1x1_dw16_cw16_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x1_dw16_cw16_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-23327:12986" coeffb="26626:28383:26626" shifta=15 shiftb=17 method="plain" outputFile=lp1x1_dw16_cw16_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x1_dw16_cw16_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-23327:12986" coeffb="26626:28383:26626" shifta=15 shiftb=17 graphb="{{'O',[26626],4,[13313],2,1},{'O',[28383],4,[28383],3,0},{'A',[9],1,[1],0,0,[1],0,3},{'A',[4097],1,[1],0,0,[1],0,12},{'A',[4385],2,[9],1,5,[4097],1,0},{'A',[13313],2,[9],1,10,[4097],1,0},{'A',[28383],3,[1],0,15,[-4385],2,0}}" grapha="{{'O',[23327],4,[23327],3,0},{'O',[12986],4,[6493],3,1},{'A',[15],1,[1],0,4,[-1],0,0},{'A',[33],1,[1],0,0,[1],0,5},{'A',[497],2,[1],0,9,[-15],1,0},{'A',[8481],2,[33],1,0,[33],1,8},{'A',[6493],3,[8481],2,0,[-497],2,2},{'A',[23327],3,[497],2,6,[-8481],2,0}}" method="multiplierless" outputFile=lp1x1_dw16_cw16_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x1_dw16_cw16_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fc9eb84ac7fa8a6:0x3fcecb77652acaef:0x3fc9eb84ac7fa8a6" coeffa="0xbfe5a7d3410f6385:0x3fd838a9b1d17d55" outputFile=lp1x2_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x2_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-3:2" coeffb="2:3:2" shifta=3 shiftb=3 graphb="{{'O',[2],2,[1],0,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" grapha="{{'O',[3],2,[3],1,0},{'O',[2],2,[1],0,1},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp1x2_dw16_cw04_shiftandadd.vhd H=1.2466120207868356 Heps=1.6897010570690663
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x2_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-22:12" coeffb="26:31:26" shifta=5 shiftb=7 method="plain" outputFile=lp1x2_dw16_cw06_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x2_dw16_cw06_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-22:12" coeffb="26:31:26" shifta=5 shiftb=7 method="plain" outputFile=lp1x2_dw16_cw06_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x2_dw16_cw06_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-22:12" coeffb="26:31:26" shifta=5 shiftb=7 graphb="{{'O',[26],3,[13],2,1},{'O',[31],3,[31],1,0},{'A',[31],1,[1],0,5,[-1],0,0},{'A',[3],1,[1],0,1,[1],0,0},{'A',[13],2,[3],1,2,[1],0,0}}" grapha="{{'O',[22],3,[11],2,1},{'O',[12],3,[3],1,2},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[11],2,[1],0,3,[3],1,0}}" method="multiplierless" outputFile=lp1x2_dw16_cw06_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x2_dw16_cw06_truncatedshiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-12:6" coeffb="3:4:3" shifta=4 shiftb=4 graphb="{{'O',[3],2,[3],1,0},{'O',[4],2,[1],0,2},{'A',[3],1,[1],0,1,[1],0,0}}" grapha="{{'O',[12],2,[3],1,2},{'O',[6],2,[3],1,1},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp1x2_dw16_cw06_shiftandadd.vhd H=1.365181797126222 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x2_dw16_cw06_shiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fc9fbf805887d61:0x3fd10a41a15def2b:0x3fc9fbf805887d61" coeffa="0xbfe460bb361e42c7:0x3fd704b72ab5aa74" outputFile=lp1x3_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x3_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-7:6" coeffb="4:6:4" shifta=4 shiftb=4 graphb="{{'O',[4],2,[1],0,2},{'O',[6],2,[3],1,1},{'A',[3],1,[1],0,1,[1],0,0}}" grapha="{{'O',[7],2,[7],1,0},{'O',[6],2,[3],1,1},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[7],1,[1],0,3,[-1],0,0}}" method="multiplierless" outputFile=lp1x3_dw16_cw04_shiftandadd.vhd H=1.4202941886398617 Heps=2.073744247592421
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x3_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-326:184" coeffb="208:273:208" shifta=9 shiftb=10 method="plain" outputFile=lp1x3_dw16_cw10_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x3_dw16_cw10_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-326:184" coeffb="208:273:208" shifta=9 shiftb=10 method="plain" outputFile=lp1x3_dw16_cw10_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x3_dw16_cw10_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-326:184" coeffb="208:273:208" shifta=9 shiftb=10 graphb="{{'O',[208],3,[13],2,4},{'O',[273],3,[273],2,0},{'A',[17],1,[1],0,4,[1],0,0},{'A',[13],2,[-1],0,2,[17],1,0},{'A',[273],2,[1],0,8,[17],1,0}}" grapha="{{'O',[326],4,[163],3,1},{'O',[184],4,[23],2,3},{'A',[31],1,[1],0,5,[-1],0,0},{'A',[97],2,[1],0,7,[-31],1,0},{'A',[163],3,[97],2,1,[-31],1,0},{'A',[23],2,[-1],0,3,[31],1,0}}" method="multiplierless" outputFile=lp1x3_dw16_cw10_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x3_dw16_cw10_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca3d37103fd7c1:0x3fd2d3a6daf6bf21:0x3fca3d37103fd7c1" coeffa="0xbfe2e632b9caea25:0x3fd5bda8af2c7fb4" outputFile=lp1x4_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x4_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-11:6" coeffb="6:9:6" shifta=4 shiftb=5 graphb="{{'O',[6],2,[3],1,1},{'O',[9],2,[9],1,0},{'A',[9],1,[1],0,3,[1],0,0},{'A',[3],1,[1],0,1,[1],0,0}}" grapha="{{'O',[11],3,[11],2,0},{'O',[6],3,[3],1,1},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[11],2,[3],1,2,[-1],0,0}}" method="multiplierless" outputFile=lp1x4_dw16_cw05_shiftandadd.vhd H=1.3610289151715975 Heps=2.2952954498441014
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x4_dw16_cw05_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-151:87" coeffb="105:151:105" shifta=8 shiftb=9 method="plain" outputFile=lp1x4_dw16_cw09_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x4_dw16_cw09_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-151:87" coeffb="105:151:105" shifta=8 shiftb=9 method="plain" outputFile=lp1x4_dw16_cw09_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x4_dw16_cw09_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-151:87" coeffb="105:151:105" shifta=8 shiftb=9 graphb="{{'O',[105],4,[105],2,0},{'O',[151],4,[151],3,0},{'A',[15],1,[1],0,4,[-1],0,0},{'A',[105],2,[15],1,3,[-15],1,0},{'A',[151],3,[1],0,8,[-105],2,0}}" grapha="{{'O',[151],5,[151],4,0},{'O',[87],5,[87],3,0},{'A',[15],1,[1],0,4,[-1],0,0},{'A',[29],2,[15],1,1,[-1],0,0},{'A',[87],3,[29],2,1,[29],2,0},{'A',[151],4,[1],0,6,[87],3,0}}" method="multiplierless" outputFile=lp1x4_dw16_cw09_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x4_dw16_cw09_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca334c2df947b5:0x3fc8cbe9ab6479e7:0x3fca334c2df947b5" coeffa="0xbfe7c88f69e58411:0x3fda744a9efb62a7" outputFile=lp2x0_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x0_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:3" coeffb="2:2:1" shifta=3 shiftb=3 graphb="{{'O',[2],1,[1],0,1},{'O',[1],1,[1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp2x0_dw16_cw04_shiftandadd.vhd H=1.3666479178186464 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x0_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp2x0_dw16_cw10_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x0_dw16_cw10_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp2x0_dw16_cw10_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x0_dw16_cw10_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 graphb="{{'O',[419],4,[419],3,0},{'O',[397],4,[397],3,0},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[397],3,[3],1,7,[13],2,0},{'A',[419],3,[13],2,5,[3],1,0}}" grapha="{{'O',[381],4,[381],2,0},{'O',[212],4,[53],3,2},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[381],2,[3],1,7,[-3],1,0},{'A',[53],3,[13],2,2,[1],0,0}}" method="multiplierless" outputFile=lp2x0_dw16_cw10_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x0_dw16_cw10_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca334c2df947b5:0x3fc8cbe9ab6479e7:0x3fca334c2df947b5" coeffa="0xbfe7c88f69e58411:0x3fda744a9efb62a7" outputFile=lp2x1_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x1_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:3" coeffb="2:2:1" shifta=3 shiftb=3 graphb="{{'O',[2],1,[1],0,1},{'O',[1],1,[1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp2x1_dw16_cw04_shiftandadd.vhd H=1.3666479178186464 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x1_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp2x1_dw16_cw10_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x1_dw16_cw10_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp2x1_dw16_cw10_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x1_dw16_cw10_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 graphb="{{'O',[419],4,[419],3,0},{'O',[397],4,[397],3,0},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[397],3,[3],1,7,[13],2,0},{'A',[419],3,[13],2,5,[3],1,0}}" grapha="{{'O',[381],4,[381],2,0},{'O',[212],4,[53],3,2},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[381],2,[3],1,7,[-3],1,0},{'A',[53],3,[13],2,2,[1],0,0}}" method="multiplierless" outputFile=lp2x1_dw16_cw10_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x1_dw16_cw10_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca334c2df947b5:0x3fc8cbe9ab6479e7:0x3fca334c2df947b5" coeffa="0xbfe7c88f69e58411:0x3fda744a9efb62a7" outputFile=lp2x2_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x2_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:3" coeffb="7:7:6" shifta=3 shiftb=5 graphb="{{'O',[7],2,[7],1,0},{'O',[6],2,[3],1,1},{'A',[3],1,[1],0,1,[1],0,0},{'A',[7],1,[1],0,3,[-1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,2,[-1],0,0}}" method="multiplierless" outputFile=lp2x2_dw16_cw04_shiftandadd.vhd H=1.35380880802672 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x2_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp2x2_dw16_cw10_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x2_dw16_cw10_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp2x2_dw16_cw10_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x2_dw16_cw10_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 graphb="{{'O',[419],4,[419],3,0},{'O',[397],4,[397],3,0},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[397],3,[3],1,7,[13],2,0},{'A',[419],3,[13],2,5,[3],1,0}}" grapha="{{'O',[381],4,[381],2,0},{'O',[212],4,[53],3,2},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[381],2,[3],1,7,[-3],1,0},{'A',[53],3,[13],2,2,[1],0,0}}" method="multiplierless" outputFile=lp2x2_dw16_cw10_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x2_dw16_cw10_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fca334c2df947b5:0x3fc8cbe9ab6479e7:0x3fca334c2df947b5" coeffa="0xbfe7c88f69e58411:0x3fda744a9efb62a7" outputFile=lp3x0_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x0_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:3" coeffb="2:2:1" shifta=3 shiftb=3 graphb="{{'O',[2],1,[1],0,1},{'O',[1],1,[1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp3x0_dw16_cw04_shiftandadd.vhd H=1.3666479178186464 Heps=2.4186770063457645
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x0_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp3x0_dw16_cw10_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x0_dw16_cw10_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 method="plain" outputFile=lp3x0_dw16_cw10_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x0_dw16_cw10_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-381:212" coeffb="419:397:419" shifta=9 shiftb=11 graphb="{{'O',[419],4,[419],3,0},{'O',[397],4,[397],3,0},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[397],3,[3],1,7,[13],2,0},{'A',[419],3,[13],2,5,[3],1,0}}" grapha="{{'O',[381],4,[381],2,0},{'O',[212],4,[53],3,2},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[13],2,[1],0,4,[-3],1,0},{'A',[381],2,[3],1,7,[-3],1,0},{'A',[53],3,[13],2,2,[1],0,0}}" method="multiplierless" outputFile=lp3x0_dw16_cw10_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x0_dw16_cw10_truncatedshiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fceb225a2cfabff:0x3fd28702af12dcb3:0x3fceb225a2cfabff" coeffa="0xbfe0bf8511b58ac4:0x3fd8305361f502c1" outputFile=lp3x1_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x1_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-4:3" coeffb="4:5:4" shifta=3 shiftb=4 method="plain" outputFile=lp3x1_dw16_cw04_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x1_dw16_cw04_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-4:3" coeffb="4:5:4" shifta=3 shiftb=4 method="plain" outputFile=lp3x1_dw16_cw04_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x1_dw16_cw04_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-4:3" coeffb="4:5:4" shifta=3 shiftb=4 graphb="{{'O',[4],2,[1],0,2},{'O',[5],2,[5],1,0},{'A',[5],1,[1],0,2,[1],0,0}}" grapha="{{'O',[4],2,[1],0,2},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,1,[1],0,0}}" method="multiplierless" outputFile=lp3x1_dw16_cw04_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x1_dw16_cw04_truncatedshiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-4:3" coeffb="4:5:4" shifta=3 shiftb=4 graphb="{{'O',[4],2,[1],0,2},{'O',[5],2,[5],1,0},{'A',[5],1,[1],0,2,[1],0,0}}" grapha="{{'O',[4],2,[1],0,2},{'O',[3],2,[3],1,0},{'A',[3],1,[1],0,2,[-1],0,0}}" method="multiplierless" outputFile=lp3x1_dw16_cw04_shiftandadd.vhd H=1.366168397800087 Heps=2.111582071502842
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x1_dw16_cw04_shiftandadd.vhd
+./flopoco FixIIR lsbIn=-16 lsbOut=-16 guardBits=-1 coeffb="0x3fd1c6097a9173d4:0x3fd8e9ffc1572149:0x3fd1c6097a9173d4" coeffa="0xbfd393720f61be23:0x3fd6c14df69400f8" outputFile=lp3x2_dw16_cw00_fixiir.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x2_dw16_cw00_fixiir.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-5:5" coeffb="5:7:4" shifta=4 shiftb=4 graphb="{{'O',[5],2,[5],1,0},{'O',[7],2,[7],1,0},{'O',[4],2,[1],0,2},{'A',[7],1,[1],0,3,[-1],0,0},{'A',[5],1,[1],0,2,[1],0,0}}" grapha="{{'O',[5],2,[5],1,0},{'A',[5],1,[1],0,2,[1],0,0}}" method="multiplierless" outputFile=lp3x2_dw16_cw04_shiftandadd.vhd H=1.4359764335842276 Heps=1.805646653776396
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-2565860:2982556" coeffb="2329619:3265536:2329619" shifta=23 shiftb=23 method="plain" outputFile=lp3x2_dw16_cw23_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x2_dw16_cw23_truncatedplain.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-2565860:2982556" coeffb="2329619:3265536:2329619" shifta=23 shiftb=23 method="plain" outputFile=lp3x2_dw16_cw23_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x2_dw16_cw23_truncatedplain0dsp.vhd --maxdsp 0
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-2565860:2982556" coeffb="2329619:3265536:2329619" shifta=23 shiftb=23 graphb="{{'O',[2329619],4,[2329619],3,0},{'O',[3265536],4,[3189],3,10},{'A',[3],1,[1],0,0,[1],0,1},{'A',[31],1,[1],0,5,[-1],0,0},{'A',[129],1,[1],0,0,[1],0,7},{'A',[131073],1,[1],0,0,[1],0,17},{'A',[227],2,[129],1,1,[-31],1,0},{'A',[1063],2,[31],1,0,[129],1,3},{'A',[2097171],2,[3],1,0,[131073],1,4},{'A',[3189],3,[1063],2,0,[1063],2,1},{'A',[2329619],3,[227],2,10,[2097171],2,0}}" grapha="{{'O',[2565860],4,[641465],3,2},{'O',[2982556],4,[745639],3,2},{'A',[3],1,[1],0,0,[1],0,1},{'A',[5],1,[1],0,0,[1],0,2},{'A',[7],1,[1],0,3,[-1],0,0},{'A',[91],2,[3],1,5,[-5],1,0},{'A',[167],2,[5],1,5,[7],1,0},{'A',[217],2,[7],1,5,[-7],1,0},{'A',[655353],2,[5],1,17,[-7],1,0},{'A',[641465],3,[655353],2,0,[-217],2,6},{'A',[745639],3,[91],2,13,[167],2,0}}" method="multiplierless" outputFile=lp3x2_dw16_cw23_truncatedshiftandadd.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x2_dw16_cw23_truncatedshiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-11:6" coeffb="6:9:6" shifta=4 shiftb=5 graphb="{{'O',[6],2,[3],1,1},{'O',[9],2,[9],1,0},{'A',[9],1,[1],0,3,[1],0,0},{'A',[3],1,[1],0,1,[1],0,0}}" grapha="{{'O',[11],3,[11],2,0},{'O',[6],3,[3],1,1},{'A',[3],1,[1],0,2,[-1],0,0},{'A',[11],2,[3],1,2,[-1],0,0}}" method="multiplierless" outputFile=lp1x5_dw16_cw05_shiftandadd.vhd H=1.3610289151715975 Heps=2.2952954498441014
+python ../tools/vivado-runsyn.py --implement --vhdl lp1x5_dw16_cw05_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-28:15" coeffb="12:11:12" shifta=5 shiftb=6 graphb="{{'O',[12],3,[3],1,2},{'O',[11],3,[11],2,0},{'A',[3],1,[1],0,1,[1],0,0},{'A',[11],2,[3],1,2,[-1],0,0}}" grapha="{{'O',[28],3,[7],1,2},{'O',[15],3,[15],2,0},{'A',[7],1,[1],0,3,[-1],0,0},{'A',[15],2,[7],1,1,[1],0,0}}" method="multiplierless" outputFile=lp2x3_dw16_cw06_shiftandadd.vhd H=1.4182614701453038 Heps=2.982032380743612
+python ../tools/vivado-runsyn.py --implement --vhdl lp2x3_dw16_cw06_shiftandadd.vhd
+./flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="-6:12" coeffb="10:15:10" shifta=5 shiftb=5 graphb="{{'O',[10],2,[5],1,1},{'O',[15],2,[15],1,0},{'A',[5],1,[1],0,2,[1],0,0},{'A',[15],1,[1],0,4,[-1],0,0}}" grapha="{{'O',[6],2,[3],1,1},{'O',[12],2,[3],1,2},{'A',[3],1,[1],0,2,[-1],0,0}}" method="multiplierless" outputFile=lp3x3_dw16_cw05_shiftandadd.vhd H=1.53891664825995 Heps=1.91497888440368
+python ../tools/vivado-runsyn.py --implement --vhdl lp3x3_dw16_cw05_shiftandadd.vhd

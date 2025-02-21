@@ -1,0 +1,28 @@
+Used system:
+Operating system: Ubuntu 18.04.4 LTS
+Compiler: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0 
+Flopoco version: 5.0.git
+Target architecture: Kintex-7 (exact part: xc7k70tfbv484-3, flopoco default), frequency: 400 (flopoco default)
+Vivado version: v2019.1 (64-bit)
+
+
+
+Preassumptions:
+1. Flopoco and Vivado is installed and working
+2. A file containing alternately a flopoco call and the corresponding call to vivado-runsyn.py, e.g. 
+../flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="247:708" coeffb="369:613:369" shifta=11 shiftb=10 method="plain" outputFile=lp4_dw16_cw11_truncatedplain.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw11_truncatedplain.vhd --maxdsp 0
+../flopoco FixIIRShiftAdd msbIn=-1 lsbIn=-16 lsbOut=-16 guardBits=-1 coeffa="247:708" coeffb="369:613:369" shifta=11 shiftb=10 method="plain" outputFile=lp4_dw16_cw11_truncatedplain0dsp.vhd
+python ../tools/vivado-runsyn.py --implement --vhdl lp4_dw16_cw11_truncatedplain0dsp.vhd --maxdsp 0
+3. bash (GNU Bourne-Again Shell) installed
+
+
+The script should be invoked using 'bash synthesis.sh <filename>' with filename being the name of the file containing the flopoco and vivado-runsyn.py calls, e.g. 'bash synthesis.sh flopocoCalls'
+Caution: The script shall be called only once per folder, otherwise it can result in undesired behaviour. If multiple parallel instances are desired the script must be invoked in different folders. It is recommended to create a separate folder.
+
+
+The script produces following files which are important for the user.
+	- flopocoLog: This file stores the complete output from flopoco for all calls made by the script. The flopoco call itself is printed above the output. It is going to be overwritten when the script is called again. This output is also shown to the shell. 
+	- vivadoOutput: Stores the output from Vivado. It is going to be overwritten for every call (in contrast to flopocoLog). The synthesis results produced by Vivado are, among many other things, stored in this file. This output is also printed to the shell.
+	- vivadoSynResults.csv: In this file the synthesis results from Vivado are organized in csv format (field separator is ";"). The results are sliced out in the vivadoOutput file. The format is with dw and cw denoting the word resp. coefficient width.
+	- *.vhd files: There is one .vhd file created by flopoco for each call. These are the files used for synthesis using vivado. These files are not getting deleted after the script finished so they can be inspected afterwards.
